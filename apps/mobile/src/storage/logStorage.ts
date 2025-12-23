@@ -56,16 +56,19 @@ export async function upsertLogByDate(
     recordedDate,
     memo: patch.memo ?? null,
 
-    headacheLevel: patch.headacheLevel ?? 1,
-    seizureLevel: patch.seizureLevel ?? 1,
-    rightSideLevel: patch.rightSideLevel ?? 1,
-    leftSideLevel: patch.leftSideLevel ?? 1,
-    speechImpairmentLevel: patch.speechImpairmentLevel ?? 1,
-    memoryImpairmentLevel: patch.memoryImpairmentLevel ?? 1,
+    // 1–5 はデフォルト 5（要件どおり）
+    headacheLevel: patch.headacheLevel ?? 5,
+    seizureLevel: patch.seizureLevel ?? 5,
+    rightSideLevel: patch.rightSideLevel ?? 5,
+    leftSideLevel: patch.leftSideLevel ?? 5,
+    speechImpairmentLevel: patch.speechImpairmentLevel ?? 5,
+    memoryImpairmentLevel: patch.memoryImpairmentLevel ?? 5,
 
+    // 0–200 はデフォルト 100（要件どおり）
     physicalCondition: patch.physicalCondition ?? 100,
     mentalCondition: patch.mentalCondition ?? 100,
 
+    // 未入力可
     bloodPressureSystolic: patch.bloodPressureSystolic ?? null,
     bloodPressureDiastolic: patch.bloodPressureDiastolic ?? null,
 

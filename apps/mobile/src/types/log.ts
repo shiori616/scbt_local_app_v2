@@ -1,25 +1,24 @@
-// apps/mobile/src/types/log.ts
+export type Level1to5 = 1 | 2 | 3 | 4 | 5;
 
 export type LogRecord = {
-    id: number; // INTEGER AUTOINCREMENT
-  
-    recordedDate: string; // YYYY-MM-DD
-    memo?: string | null;
-  
-    headacheLevel: number; // 1-5
-    seizureLevel: number; // 1-5
-    rightSideLevel: number; // 1-5
-    leftSideLevel: number; // 1-5
-    speechImpairmentLevel: number; // 1-5
-    memoryImpairmentLevel: number; // 1-5
-  
-    physicalCondition: number; // 1-200
-    mentalCondition: number; // 1-200
-  
-    bloodPressureSystolic?: number | null;
-    bloodPressureDiastolic?: number | null;
-  
-    createdAt: string; // ISO string
-    updatedAt: string; // ISO string
-  };
-  
+  id: number; // 端末内での連番（AsyncStorage用）
+  recordedDate: string; // YYYY-MM-DD（ユニークキー扱い）
+
+  headacheLevel: Level1to5; // default 5
+  seizureLevel: Level1to5; // default 5
+  rightSideLevel: Level1to5; // default 5
+  leftSideLevel: Level1to5; // default 5
+  speechImpairmentLevel: Level1to5; // default 5
+  memoryImpairmentLevel: Level1to5; // default 5
+
+  physicalCondition: number; // 0-200 default 100
+  mentalCondition: number; // 0-200 default 100
+
+  bloodPressureSystolic: number | null; // 未入力可
+  bloodPressureDiastolic: number | null; // 未入力可
+
+  memo: string | null; // 未入力可（長文OK）
+
+  createdAt: string; // ISO
+  updatedAt: string; // ISO
+};
