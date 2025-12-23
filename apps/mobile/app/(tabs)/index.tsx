@@ -380,6 +380,7 @@ export default function RecordEntryScreen() {
               step={1}
               value={physicalCondition}
               onValueChange={setPhysicalCondition}
+              tapToSeek={true}
               minimumTrackTintColor={c.tint}
               maximumTrackTintColor={c.border}
               thumbTintColor={c.tint}
@@ -443,6 +444,7 @@ export default function RecordEntryScreen() {
                 step={1}
                 value={mentalCondition}
                 onValueChange={setMentalCondition}
+                tapToSeek={true}
                 minimumTrackTintColor={c.tint}
                 maximumTrackTintColor={c.border}
                 thumbTintColor={c.tint}
